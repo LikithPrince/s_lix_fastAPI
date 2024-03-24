@@ -39,7 +39,7 @@ def test_get_note():
     response = client.post("/notes", json={"title": "Test Note", "content": "This is a test note"})
     note_id = response.json()["id"]
     response = client.get(f"/notes/{note_id}")
-    assert response.status_code == 202
+    assert response.status_code == 200
     assert response.json()["title"] == "Test Note"
 
 def test_update_note():
